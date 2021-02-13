@@ -8,46 +8,21 @@ import { Router } from "@angular/router";
   styleUrls: ["./villains.component.css"],
 })
 export class VillainsComponent implements OnInit, OnDestroy {
-  trackerReset = "0";
   itemForm: FormGroup;
   editedForm: FormGroup;
   villains: any;
   error = "";
   isLoading = false;
-  editingTracker = this.trackerReset;
+  editingTracker = "0";
 
   constructor(private fb: FormBuilder, private router: Router) {}
 
   ngOnInit(): void {
     this.formBuilderInit();
-    this.fetchVillains();
-    this.observableConverters();
   }
 
   // this is needed in untilDestroyed
   ngOnDestroy(): void {}
-
-  fetchVillains() {}
-
-  removeVillain(id: string) {}
-
-  onSave() {
-    // stop here if form is invalid
-    if (this.itemForm.invalid) {
-      return;
-    }
-
-    this.itemForm.reset();
-  }
-
-  onUpdate() {
-    // stop here if form is invalid
-    if (this.editedForm.invalid) {
-      return;
-    }
-
-    this.editingTracker = this.trackerReset;
-  }
 
   goToVillainDetail(id: string) {
     this.router.navigateByUrl("/villains/villain-detail/" + id);
@@ -69,6 +44,4 @@ export class VillainsComponent implements OnInit, OnDestroy {
       knownAs: [""],
     });
   }
-
-  private observableConverters(): void {}
 }
