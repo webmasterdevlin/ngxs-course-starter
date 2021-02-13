@@ -11,8 +11,5 @@ export class NavBarComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {
-    this.observableConverters();
-  }
-  private observableConverters(): void {}
+  ngOnInit(): void {}
 }
