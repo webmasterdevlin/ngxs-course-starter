@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
@@ -7,7 +7,7 @@ import { Router } from "@angular/router";
   templateUrl: "./heroes.component.html",
   styleUrls: ["./heroes.component.css"],
 })
-export class HeroesComponent implements OnInit, OnDestroy {
+export class HeroesComponent implements OnInit {
   itemForm: FormGroup;
   editedForm: FormGroup;
   heroes: any;
@@ -20,9 +20,6 @@ export class HeroesComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.formBuilderInit();
   }
-
-  // this is needed in untilDestroyed
-  ngOnDestroy(): void {}
 
   fetchHeroes() {}
 
