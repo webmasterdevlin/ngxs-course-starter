@@ -20,7 +20,7 @@ export class HeroesComponent implements OnInit {
     this.formBuilderInit();
   }
 
-  goToHeroDetail(id: string) {
+  handleNavigateHeroDetail(id: string) {
     this.router.navigateByUrl("/heroes/hero-detail/" + id);
   }
 
