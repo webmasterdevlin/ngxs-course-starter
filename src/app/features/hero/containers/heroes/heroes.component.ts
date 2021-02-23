@@ -11,7 +11,6 @@ export class HeroesComponent implements OnInit {
   itemForm: FormGroup;
   editedForm: FormGroup;
   heroes: any;
-  error = "";
   isLoading = false;
   editingTracker = "0";
 
@@ -19,26 +18,6 @@ export class HeroesComponent implements OnInit {
 
   ngOnInit(): void {
     this.formBuilderInit();
-  }
-
-  fetchHeroes() {}
-
-  removeHero(id: string) {}
-
-  onSave() {
-    // stop here if form is invalid
-    if (this.itemForm.invalid) {
-      return;
-    }
-
-    this.itemForm.reset();
-  }
-
-  onUpdate() {
-    // stop here if form is invalid
-    if (this.editedForm.invalid) {
-      return;
-    }
   }
 
   goToHeroDetail(id: string) {
